@@ -11,5 +11,16 @@ describe('Prueba en <GifExpertApp />', () => {
         expect( wrapper ).toMatchSnapshot();
 
     });
+
+    test('deb de mostrar una lista de categorias', () => {
+        
+        const categorias = ('One Punc', 'DBZ');
+        const wrapper = shallow(<GifExpertApp defaultCategories={ categorias } />)
+    
+        expect( wrapper ).toMatchSnapshot();
+        expect( wrapper.find('GifGrid').length ).toBe( categorias.length );
+    
+    });
+    
     
 });
